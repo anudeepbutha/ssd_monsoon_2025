@@ -1,0 +1,62 @@
+.custom_tables table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom_tables td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.custom_tables tr:nth-child(even){background-color: #f2f2f2;}
+
+.custom_tables tr:hover {background-color: #ddd;}
+
+.custom_tables th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Applies only to tables with class 'custom_tables' */
+.text_tables {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;              /* keep tables neat */
+  margin: 1.5rem auto;     /* center tables with spacing */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text_tables th,
+.text_tables td {
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  text-align: center;
+}
+
+.text_tables tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.text_tables tr:hover {
+  background-color: #f1f1f1;
+}
+
+.text_tables th {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #04AA6D; /* green header */
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Optional: narrow table fix (like Rubric table) */
+.text_tables[width="10%"] {
+  width: auto;
+  min-width: 60%;
+}
