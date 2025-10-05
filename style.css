@@ -21,12 +21,11 @@
   color: white;
 }
 
-/* Applies only to tables with class 'custom_tables' */
-.text_tables {
+.text_tables table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
-  width: 80%;              /* keep tables neat */
-  margin: 1.5rem auto;     /* center tables with spacing */
+  width: 80%;
+  margin: 1.5rem auto;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -48,15 +47,28 @@
 .text_tables th {
   padding-top: 14px;
   padding-bottom: 14px;
-  background-color: #04AA6D; /* green header */
+  background-color: #04AA6D;
   color: white;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-/* Optional: narrow table fix (like Rubric table) */
 .text_tables[width="10%"] {
   width: auto;
   min-width: 60%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background: #E8EAEB;
+  color: black;
+  padding: 8px 12px;
+  margin: 22px auto;
+  border-radius: 20px;
+  width: fit-content;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }

@@ -115,9 +115,7 @@ Designed for students with a fundamental background in programming, this course 
 <br>
 <br> 
 </li>
-<li><b>Grading Distribution:</b> The course instructor reserves the right to make minor modifications to the above distribution based on the progress of the courses. Below is the overall grade distribution.
-<br>
-<br> 
+<li><b>Grading Distribution:</b> The course instructor reserves the right to make minor modifications to the above distribution based on the progress of the courses. Below is the overall grade distribution.</li>
 <table border="1" align="center" class="custom_tables">
 <tr align="center"><th>Deliverables</th><th>Weightage</th></tr>
 <tr align="center"><td>Assignment (4)</td><td>15%</td></tr>
@@ -127,11 +125,8 @@ Designed for students with a fundamental background in programming, this course 
 <tr align="center"><td>MID (1)</td><td>10%</td></tr>
 <tr align="center"><td>Final Exam (Team Project)</td><td>40%</td></tr>
 </table>
-</li>
 <br>
-<li><b>Evaluation Rubric:</b> All evaluations as part of this course follow below evaluation rubric. TAs will follow below guidelines for evaluating assignments and lab activities for this course.
-<br>
-<br>
+<li><b>Evaluation Rubric:</b> All evaluations as part of this course follow below evaluation rubric. TAs will follow below guidelines for evaluating assignments and lab activities for this course.</li>
 <table border="1" align="center" width="10%" class="custom_tables">
 <tr><th>Rubric</th><th>Input(15%)</th><th>Logic(60%)</th><th>Output(15%)</th><th>Submission(10%)</th></tr>
 <tr><td>Exceptional (100%)</td><td>All inputs are working as per the requirements</td><td>Logic is accurate and as per the requirements defined in the question</td><td>All outputs are returned as per the requirements</td><td>Script submissions are correct and as per requirements</td></tr>
@@ -139,7 +134,6 @@ Designed for students with a fundamental background in programming, this course 
 <tr><td>Beginning (30%)</td><td>At least one input is working as per the requirements</td><td>Logic is partially correct and as per the requirements defined in the question</td><td>At least one output is returned as per the requirement</td><td>Atleast one part of the script submission is correct and as per requirements</td></tr>
 <tr><td>No Response (0%)</td><td>None of the inputs are working as per the requirements</td><td>Logic is incorrect and not as per the requirements defined in the question</td><td>None of the outputs are returned as per the requirements</td><td>Script submissions is incorrect and not as per requirements</td></tr>
 </table> 
-</li>
 </ul><hr>
 </p>
 </td>
@@ -250,7 +244,7 @@ Designed for students with a fundamental background in programming, this course 
   <tr align="center">
     <td>16</td>
     <td>03-Oct-25 (Friday)</td>
-    <td>HELL - Session 2</td>
+    <td>SHELL - Session 2</td>
     <td>[Notes][Slides]</td>
   </tr>
   <tr align="center">
@@ -456,7 +450,53 @@ Important Links: <a href="https://intranet.iiit.ac.in/offices/static/files/Alman
 	<a href="https://serc.iiit.ac.in">Software Engineering Research Center</a>,<a href="https://iiit.ac.in">IIIT Hyderabad</a></font><br> </p><!--<br><p id="lastUpdated" align="center"><font face="Quicksand" size="2">Site Last Updated on: </font></p>--></td>
 </tr>
 </table>
+<script>
+      function getTimestamp() {
+        return new Date().toISOString();
+      }
 
+      function getElementType(el) {
+        if (!el) return 'unknown';
+        const tag = el.tagName.toLowerCase();
+
+        if (tag === 'button') return 'button';
+        if (tag === 'a') return 'link';
+        if (tag === 'img') return 'image';
+        if (tag === 'select') return 'drop_down';
+        if (tag === 'input') {
+          const type = el.getAttribute('type') || 'text';
+          return `input_${type}`;
+        }
+        if (tag === 'textarea') return 'text_area';
+        if (el.innerText && el.innerText.trim().length > 0) return 'text';
+        return tag;
+      }
+
+      function trackClicks() {
+        document.addEventListener('click', function (event) {
+          const el = event.target;
+          const elementType = getElementType(el);
+          console.log(`${getTimestamp()} | click | ${elementType}`);
+        });
+      }
+
+      function trackViews() {
+        const allElements = document.querySelectorAll('button, a, img, input, select, textarea, p, h1, h2, h3, div');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const elementType = getElementType(entry.target);
+              console.log(`${getTimestamp()} | view | ${elementType}`);
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.5 });
+        allElements.forEach(el => observer.observe(el));
+      }
+
+      trackClicks();
+      trackViews();
+    </script>
 
 	</body>
 </html>
